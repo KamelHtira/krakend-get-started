@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "4b8bab0b-a86b-4d18-97ee-d530c74bc383",
+		"name": "Demo Krakend API gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30288224"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/public/21",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"public",
+						"21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Public",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/public/21",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"public",
+								"21"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=4000"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Krakend",
+							"value": "Version 2.0.5"
+						},
+						{
+							"key": "X-Krakend-Completed",
+							"value": "true"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Oct 2023 09:58:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"21\",\n    \"message\": \"this api is public\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/login",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Oct 2023 08:46:34 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6ImthbWVsaHRpcmFAZ21haWwuY29tIiwiaWQiOiIxMjMyMSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzdWIiOiJzc3MifQ.7lMcOBl8bulMFt91R7PoIRFN6DanZl-YgFc7eJ0nFVk\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6ImthbWVsaHRpcmFAZ21haWwuY29tIiwiaWQiOiIxMjMyMSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzdWIiOiJzc3MifQ.7lMcOBl8bulMFt91R7PoIRFN6DanZl-YgFc7eJ0nFVk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/user/21",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"user",
+						"21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6ImthbWVsaHRpcmFAZ21haWwuY29tIiwiaWQiOiIxMjMyMSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzdWIiOiJzc3MifQ.7lMcOBl8bulMFt91R7PoIRFN6DanZl-YgFc7eJ0nFVk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/user/21",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"21"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=4000"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Krakend",
+							"value": "Version 2.0.5"
+						},
+						{
+							"key": "X-Krakend-Completed",
+							"value": "true"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Oct 2023 08:48:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"21\",\n    \"message\": \"this api is private [user, admin] \",\n    \"userId\": \"12321\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login Amin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/login",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/login-admin",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"login-admin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 Jan 2024 15:34:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6Inh5ei1hZG1pbkBleGFtcGxlLmNvbSIsImlkIjoiNjc4OTEiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXX0.qh0in4ISSHzJXerx-ZieJLKleKcKXV0Dy17Vm4metPE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6ImthbWVsaHRpcmFAZ21haWwuY29tIiwiaWQiOiIxMjMyMSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzdWIiOiJzc3MifQ.7lMcOBl8bulMFt91R7PoIRFN6DanZl-YgFc7eJ0nFVk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/admin/21",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"admin",
+						"21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6Inh5ei1hZG1pbkBleGFtcGxlLmNvbSIsImlkIjoiNjc4OTEiLCJyb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXX0.qh0in4ISSHzJXerx-ZieJLKleKcKXV0Dy17Vm4metPE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/admin/21",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admin",
+								"21"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=4000"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Krakend",
+							"value": "Version 2.0.5"
+						},
+						{
+							"key": "X-Krakend-Completed",
+							"value": "true"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 Jan 2024 17:50:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"21\",\n    \"message\": \"this api is private [admin]\",\n    \"userId\": \"67891\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6InNpbTIifQ.eyJlbWFpbCI6ImthbWVsaHRpcmFAZ21haWwuY29tIiwiaWQiOiIxMjMyMSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzdWIiOiJzc3MifQ.7lMcOBl8bulMFt91R7PoIRFN6DanZl-YgFc7eJ0nFVk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/user/21",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"user",
+						"21"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

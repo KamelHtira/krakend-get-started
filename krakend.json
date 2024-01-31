@@ -101,6 +101,7 @@
     {
       "endpoint": "/admin/{id}",
       "method": "GET",
+      "input_headers": ["x-userId"],
       "backend": [
         {
           "url_pattern": "/admin/{id}",
@@ -110,6 +111,7 @@
       ],
       "extra_config": {
         "auth/validator": {
+          "propagate_claims": [["id", "x-userId"]],
           "alg": "HS256",
           "jwk_local_path": "symmetric.json",
           "roles_key": "roles",
