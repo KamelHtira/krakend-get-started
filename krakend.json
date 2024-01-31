@@ -1,0 +1,124 @@
+{
+  "$schema": "https://www.krakend.io/schema/v3.json",
+  "version": 3,
+  "name": "RestApiGateway",
+  "timeout": "300000ms",
+  "cache_ttl": "4000s",
+  "port": 8080,
+  "output_encoding": "json",
+  "extra_config": {
+    "router": {
+      "return_error_msg": true
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "method": "GET",
+          "host": ["http://172.18.0.1:4000"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/login",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/login",
+          "method": "POST",
+          "host": ["http://172.18.0.1:4000"]
+        }
+      ],
+      "extra_config": {
+        "auth/signer": {
+          "alg": "HS256",
+          "kid": "sim2",
+          "keys_to_sign": ["access_token"],
+          "jwk_local_path": "symmetric.json",
+          "disable_jwk_security": true
+        }
+      }
+    },
+    {
+      "endpoint": "/login-admin",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/login-admin",
+          "method": "POST",
+          "host": ["http://172.18.0.1:4000"]
+        }
+      ],
+      "extra_config": {
+        "auth/signer": {
+          "alg": "HS256",
+          "kid": "sim2",
+          "keys_to_sign": ["access_token"],
+          "jwk_local_path": "symmetric.json",
+          "disable_jwk_security": true
+        }
+      }
+    },
+    {
+      "endpoint": "/public/{id}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/public/{id}",
+          "method": "GET",
+          "host": ["http://172.18.0.1:4000"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/user/{id}",
+      "method": "GET",
+      "input_headers": ["x-userId"],
+      "backend": [
+        {
+          "url_pattern": "/user/{id}",
+          "method": "GET",
+          "host": ["http://172.18.0.1:4000"]
+        }
+      ],
+      "extra_config": {
+        "auth/validator": {
+          "propagate_claims": [["id", "x-userId"]],
+          "alg": "HS256",
+          "jwk_local_path": "symmetric.json",
+          "roles_key": "roles",
+          "roles": ["user", "admin"],
+          "operation_debug": true,
+          "disable_jwk_security": true,
+          "cache": false
+        }
+      }
+    },
+    {
+      "endpoint": "/admin/{id}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/admin/{id}",
+          "method": "GET",
+          "host": ["http://172.18.0.1:4000"]
+        }
+      ],
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_local_path": "symmetric.json",
+          "roles_key": "roles",
+          "roles": ["admin"],
+          "operation_debug": true,
+          "disable_jwk_security": true,
+          "cache": false
+        }
+      }
+    }
+  ]
+}
